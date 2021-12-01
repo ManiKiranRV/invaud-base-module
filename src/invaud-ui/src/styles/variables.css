@@ -1,0 +1,22 @@
+:root {
+  --brand-primary: #d40511;
+  --brand-secondary: #FFE57F;
+  --brand-success: #78BD22;
+  --brand-warning: #FFCC00;
+  --brand-danger: #D40511;
+  --brand-info: #000;
+  --border-radius: 4px;
+
+  --red: #d40511;
+  --red-hover: #f91320;
+  --yellow: #ffcc00;
+
+  --black: rgba(0, 0, 0, 0.9);
+  --lightgrey: #f1f1f1;
+
+  /* discuss if this is the way to go for handling hover colours etc
+  only con is that colours specified in dhl style guide may not be able to
+  be recreated exactly - suggested use fallbacks */
+  --brightness-factor: 1.2; 
+  --darkness-factor: 0.8;
+}

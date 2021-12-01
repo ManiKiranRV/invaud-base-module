@@ -1,0 +1,26 @@
+/* #########################################
+Border Style
+######################################### */
+
+.border-dashed {
+    border-style: dashed;
+}
+
+.border-solid {
+    border-style: solid;
+}
+
+.border-dotted {
+    border-style: dotted;
+}
+
+.border-none {
+    border-style: none;
+}
+
+/* #########################################
+Border width
+######################################### */
+.bw1 {
+    border-width: 1px;
+}

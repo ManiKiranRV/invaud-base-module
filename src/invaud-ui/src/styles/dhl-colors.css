@@ -1,0 +1,12 @@
+/* This file is here to store the dhl colours. Currently unused.
+*/
+
+:root {
+  --red: #d40511;
+  --red-hover: #f91320;
+  --yellow: #ffcc00;
+  --black: rgba(0, 0, 0, 0.9);
+  --lightgrey: #f1f1f1;
+  --success: #76bd22;
+  --success-dark: #007c39;
+}

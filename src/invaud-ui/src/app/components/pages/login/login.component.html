@@ -1,0 +1,44 @@
+<div class="flex justify-center">
+  <div class="card mt-2">
+    <h2 class="mt-0 red-text">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="inputdiv width-stretch block mb-1">
+        <input
+          type="text"
+          id="email"
+          name="email"
+          class="dhl-input"
+          placeholder="john.doe@dhl.com"
+          formControlName="email"
+          (focus)="onFocusHandler()"
+          required
+        />
+        <label class="dhl-label"> Email </label>
+      </div>
+      <div class="inputdiv width-stretch block">
+        <input
+          type="password"
+          name="password"
+          class="dhl-input"
+          placeholder="password"
+          formControlName="password"
+          (focus)="onFocusHandler()"
+          required
+        />
+        <label class="dhl-label"> Password </label>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="!(f.email.valid && f.password.valid)"
+        class="btn btn-primary width-stretch mt-2 mb-1"
+      >
+        Login
+      </button>
+      <app-error-feedback *ngIf="showFeedback()"
+        >Unable to login. Please check your email and
+        password</app-error-feedback
+      >
+    </form>
+  </div>
+</div>

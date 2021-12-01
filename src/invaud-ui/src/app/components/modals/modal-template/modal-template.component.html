@@ -1,0 +1,5 @@
+<div (click)="onClick()" class="overlay"></div>
+<div class="card">
+  <app-close-button *ngIf="dismissable" (onClick)="onClick()"></app-close-button>
+  <ng-content></ng-content>
+</div>

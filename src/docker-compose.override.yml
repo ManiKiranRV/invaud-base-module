@@ -1,0 +1,116 @@
+version: "3.4"
+
+services:
+  invaud_backend_migration:
+    build:
+      context: ./
+      dockerfile: ./docker/invaud-backend/database-migration/Dockerfile
+      args:
+        DATABASE_URL: ${INVAUD_BACKEND_DATABASE_URL}
+    depends_on:
+      - db_mariadb
+  invaud_backend:
+    build:
+      dockerfile: ./docker/invaud-backend/Dockerfile.development
+      args:
+        DATABASE_URL: ${INVAUD_BACKEND_DATABASE_URL}
+    ports:
+      - "3030:3030"
+    volumes:
+      - ./invaud-backend/src:/usr/src/invaud-backend/src
+    restart: always
+    environment:
+      DATABASE_URL: ${INVAUD_BACKEND_DATABASE_URL}
+      SUPERADMIN_EMAIL: ${SUPERADMIN_EMAIL}
+      SUPERADMIN_HASHED_PASSWORD: ${SUPERADMIN_HASHED_PASSWORD}
+      INSTANCE_TYPE: ${INSTANCE_TYPE}
+    depends_on:
+      - kafka
+      - invaud_backend_migration
+  invaud_ui:
+    build:
+      dockerfile: ./docker/invaud-ui/Dockerfile.development
+    ports:
+      - "4200:4200"
+    #      - "49153:49153"
+    volumes:
+      - ./invaud-ui/src:/app/invaud-ui/src
+    environment:
+      NODE_ENV: production
+      SERVER_PORT: 4200
+    restart: always
+  mock_bless:
+    build:
+      dockerfile: ./docker/mock-bless/Dockerfile.development
+      context: .
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./mock-bless/src:/usr/src/mock-bless/src
+    restart: always
+    environment:
+      KAFKA_BROKERS: ${KAFKA_BROKERS}
+      KAFKA_TOPIC: ${KAFKA_TOPIC}
+      BLESS_ERROR_TOPIC: ${BLESS_ERROR_TOPIC}
+    depends_on:
+      - kafka
+  kafka:
+    image: wurstmeister/kafka:${KAFKA_VERSION:-latest}
+    hostname: kafka1
+    restart: always
+    depends_on:
+      - zookeeper
+    ports:
+      - target: 9094
+        published: 9094
+        protocol: tcp
+        mode: host
+    environment:
+      KAFKA_CREATE_TOPICS: 'cool-topic:1:1:compact,newInvoice:1:1:compact,NewPickupFile:1:1:compact,BlessAckTopic:1:1:compact'
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://:9092,OUTSIDE://localhost:9094
+      KAFKA_LISTENERS: INSIDE://:9092,OUTSIDE://:9094
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_BROKER_ID: 1
+    volumes:
+      - type: volume
+        source: kafka-volume
+        target: /kafka
+  zookeeper:
+    image: wurstmeister/zookeeper
+    restart: always
+    ports:
+      - "2181:2181"
+    volumes:
+      - type: volume
+        source: zookeeper-volume-conf
+        target: /opt/zookeeper-3.4.13/conf
+      - type: volume
+        source: zookeeper-volume-data
+        target: /opt/zookeeper-3.4.13/data
+  # redis:
+  #   ports:
+  #     - 6379:6379
+  db_mariadb:
+    env_file:
+      - .env
+    restart: 'always'
+    ports:
+      - "3306:3306"
+    volumes:
+      - type: volume
+        source: db_mariadb-volume-data
+        target: /var/lib/mysql/
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+volumes:
+  kafka-volume:
+  zookeeper-volume-conf:
+  zookeeper-volume-data:
+  db_mariadb-volume-data:

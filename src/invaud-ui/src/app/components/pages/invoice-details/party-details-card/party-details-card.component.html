@@ -1,0 +1,31 @@
+<div class="card m-1 flex-grow">
+  <h3 class="emphasis mt-0 mb-1">{{ title }}</h3>
+  <div class="data-row">
+    <p>Account No.</p>
+    <p>DE815543432</p>
+  </div>
+  <div class="data-row">
+    <p>Name</p>
+    <p>{{ address.name }}</p>
+  </div>
+  <div class="data-row">
+    <p>Address Line 1</p>
+    <p>{{ address.addressLine1 }}</p>
+  </div>
+  <div class="data-row">
+    <p>Postal Code</p>
+    <p>{{ address.zip }}</p>
+  </div>
+  <div class="data-row">
+    <p>City</p>
+    <p>{{ address.city }}</p>
+  </div>
+  <div class="data-row">
+    <p>Country Code</p>
+    <p>{{ address.country }}</p>
+  </div>
+  <div *ngIf="address.taxId" class="data-row">
+    <p>Tax Id</p>
+    <p>{{ address.taxId }}</p>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+# end-to-end-standard-charges
+
+## status
+
+- #lightgreen = draft
+- #lightblue = submited
+- #lightpink= active
+- #lightgray= archived
+
+@startuml additionalCharges
+|E| Events
+|S| Supplier
+|C| Customer
+|A| Admin
+
+
+|E|
+start
+:1. Proof of delivery;
+
+|S|
+if (2. Additional charges?) then (yes) 
+  |C|
+  :Review additional charges; 
+else (no)
+endif
+
+  |E|
+  : Reconciliation starts;
+
+
+
+@enduml

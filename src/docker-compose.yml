@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  invaud_backend:
+    image: ${REGISTRY:-dhl_invoiceandaudit}/invaud_backend:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: ./docker/invaud-backend/Dockerfile
+    depends_on:
+      - mariadb
+  invaud_ui:
+    image: ${REGISTRY:-dhl_invoiceandaudit}/invaud_ui:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: ./docker/invaud-ui/Dockerfile
+  db_mariadb:
+    image: mariadb:${MARIADB_VERSION:-latest}

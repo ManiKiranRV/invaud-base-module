@@ -1,0 +1,19 @@
+.ipMpmd {
+  background-color: transparent;
+  border: solid 2px transparent;
+  box-sizing: border-box;
+  color: var(--red);
+  cursor: pointer;
+  outline: 0;
+  padding: 1.3125rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: color 250ms, border-color 250ms;
+}
+
+.fRkQbP {
+    display: block;
+    width: 16px;
+    height: 16px;
+}

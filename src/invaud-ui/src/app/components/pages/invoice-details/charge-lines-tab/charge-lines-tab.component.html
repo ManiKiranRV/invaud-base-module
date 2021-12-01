@@ -1,0 +1,25 @@
+<div class="flex-row space-between align-center">
+  <h3 class="emphasis">Charge Lines</h3>
+</div>
+<app-aggrid
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  [gridOptions]="gridOptions"
+  [emptySearchParams]="emptyChargeLinesSearchParams"
+  (onSetData)="setData($event)"
+  (onRowDoubleClickedEvent)="onRowDoubleClicked($event)"
+>
+</app-aggrid>
+<app-row-counter
+  [activePage]="activePage"
+  [numberPerPage]="numberPerPage"
+  [numberOfRows]="numberOfRows"
+>
+</app-row-counter>
+<app-pagination
+  *ngIf="activePage && numberOfRows"
+  [activePage]="activePage"
+  [numberOfPages]="numberOfPages"
+  (onNewPageSet)="newPageHandler($event)"
+></app-pagination>
+

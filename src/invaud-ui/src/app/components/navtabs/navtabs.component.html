@@ -1,0 +1,17 @@
+<div class="sc-kBqltT hcphvS mt-1 mb-1">
+  <ul class="sc-gJjCBC eYKQsA">
+    <li
+      *ngFor="let tab of tabs | keyvalue: noSort"
+      [ngClass]="{
+        'sc-hmvlTC': active === tab.key,
+        iYdmuU: active === tab.key,
+        cldSFX: active !== tab.key
+      }"
+      (click)="setActive(tab.key)"
+    >
+      <div class="sc-eKaOPE moYzu">
+        <span class="sc-fGgRdh bsfSuH">{{ tab.value }}</span>
+      </div>
+    </li>
+  </ul>
+</div>

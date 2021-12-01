@@ -1,0 +1,80 @@
+<div class="flex-row space-between align-center">
+  <h3 class="emphasis">Proforma Details</h3>
+</div>
+<h4 class="section-header">Invoice & Shipment Details</h4>
+<div class="data-row mb-2">
+  <div class="flex-1">
+    <div class="data-row">
+      <p>Invoice No.</p>
+      <p>{{ invoice?.invoiceNumber }}</p>
+    </div>
+    <div class="data-row">
+      <p>Job No.</p>
+      <p>{{ invoice?.shipment?.shipReferenceId }}</p>
+    </div>
+    <div class="data-row">
+      <p>Branch Code</p>
+      <p>PLACEHOLDER</p>
+    </div>
+    <div class="data-row">
+      <p>Branch Name</p>
+      <p>PLACEHOLDER</p>
+    </div>
+  </div>
+  <br class="mr-1 ml-1" />
+  <div class="flex-1">
+    <div class="data-row">
+      <p>Department Code</p>
+      <p>PLACEHOLDER</p>
+    </div>
+    <div class="data-row">
+      <p>Department Name</p>
+      <p>PLACEHOLDER</p>
+    </div>
+    <div class="data-row">
+      <p>Total Packages</p>
+      <p>{{ invoice?.shipment?.numberOfPieces }}</p>
+    </div>
+    <div class="data-row">
+      <p>Total Weight</p>
+      <p>{{ invoice?.shipment?.weight }} {{ invoice?.shipment?.weightUom }}</p>
+    </div>
+    <div class="data-row">
+      <p>Total Volume</p>
+      <p>{{ invoice?.shipment?.volume }} {{ invoice?.shipment?.volumeUom }}</p>
+    </div>
+  </div>
+  <br class="mr-1 ml-1" />
+  <div class="flex-1">
+    <div class="data-row">
+      <p>Total Chargeable</p>
+      <p>
+        {{ invoice?.shipment?.chargeableWeight }}
+        {{ invoice?.shipment?.chargeableWeightUom }}
+      </p>
+    </div>
+    <div class="data-row">
+      <p>Value of Goods</p>
+      <p>
+        {{ invoice?.shipment?.valueOfGoods }}
+        {{ invoice?.shipment?.goodsValuta }}
+      </p>
+    </div>
+    <div class="data-row">
+      <p>Goods Description</p>
+      <p>PLACEHOLDER</p>
+    </div>
+  </div>
+</div>
+
+<h4 class="section-header">Origin</h4>
+<app-location-row
+  *ngIf="invoice"
+  [location]="findStation('origin')"
+></app-location-row>
+
+<h4 class="section-header">Destination</h4>
+<app-location-row
+  *ngIf="invoice"
+  [location]="findStation('destination')"
+></app-location-row>

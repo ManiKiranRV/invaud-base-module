@@ -1,0 +1,64 @@
+<!-- <app-banner></app-banner> -->
+<div class="flex-row space-between align-center ml-1 mr-1">
+  <h4 class="ml-2">
+    <span class="red-text"
+      >Proforma Invoice No.: {{ invoice.invoiceNumber }}
+    </span>
+    (Uploaded) <span style="padding-left: 2rem"></span> HAWB No.:
+    {{ invoice.shipReferenceId }}
+  </h4>
+  <app-button-group></app-button-group>
+</div>
+<hr />
+
+<br />
+<div class="flex container ml-1 mr-1">
+  <app-event-chain [chainEvents]="invoice.chainEvents"></app-event-chain>
+  <div class="flex-grow">
+    <div class="select-wrap ml-1">
+      <label class="dhl-label">Show</label>
+      <select class="invoice-select dhl-input" id="selectedInvoiceStage" disabled>
+        <option
+          *ngFor="let status of invoiceStage | enumToHtmlArray: 'All'"
+          value="{{ status }}"
+          [selected]="status === invoice.status"
+        >
+          {{ status }}
+        </option>
+      </select>
+    </div>
+    <div class="flex-row">
+      <app-party-details-card
+        title="Bill to party"
+        [address]="billToPartyAddress"
+      ></app-party-details-card>
+      <app-party-details-card
+        title="Shipper"
+        [address]="shipperAddress"
+      ></app-party-details-card>
+      <app-party-details-card
+        title="Consignee"
+        [address]="consigneeAddress"
+      ></app-party-details-card>
+    </div>
+
+    <div class="ml-1">
+      <hr />
+      <app-proforma-details-tab [invoice]="invoice"></app-proforma-details-tab>
+      <hr />
+      <app-references-tab
+        [id]="invoice.invoiceNumber"
+        [references]="invoice.references"
+      ></app-references-tab>
+      <hr />
+      <app-charge-lines-tab [id]="invoice.invoiceNumber"></app-charge-lines-tab>
+      <hr />
+      <app-additional-charges-tab
+        [id]="invoice.invoiceNumber"
+      ></app-additional-charges-tab>
+      <hr />
+      <app-additional-documents-tab></app-additional-documents-tab>
+      <hr />
+    </div>
+  </div>
+</div>

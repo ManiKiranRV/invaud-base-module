@@ -1,0 +1,81 @@
+<app-modal-template
+  *ngIf="modal && modalType"
+  [dismissable]="true"
+  (closeEvent)="closeModal()"
+>
+  <form (ngSubmit)="onSubmit()">
+    <h2 *ngIf="modalType === 'add'" class="main-headline red-text">
+      Add new charge line
+    </h2>
+    <h2 *ngIf="modalType === 'edit'" class="main-headline red-text">
+      Edit charge line
+    </h2>
+    <div class="inputdiv block mb-1">
+      <input
+        name="code"
+        [(ngModel)]="newChargeLine.code"
+        type="text"
+        class="dhl-input"
+        placeholder="Select one from the list"
+        [ngClass]="{ feedbackBorder: false }"
+        required
+      />
+      <label class="dhl-label">Code</label>
+      <app-error-feedback *ngIf="false">feedback</app-error-feedback>
+    </div>
+    <div class="inputdiv block mb-1">
+      <input
+        name="description"
+        [(ngModel)]="newChargeLine.description"
+        type="text"
+        class="dhl-input"
+        placeholder="Place description here"
+        [ngClass]="{ feedbackBorder: false }"
+        required
+      />
+      <label class="dhl-label">Description</label>
+      <app-error-feedback *ngIf="false">feedback</app-error-feedback>
+    </div>
+
+    <div class="select-wrap mb-1">
+      <label class="dhl-label">Currency Code</label>
+      <select
+        class="dhl-input"
+        [(ngModel)]="newChargeLine.currency"
+        name="currencyCode"
+      >
+        <option
+          *ngFor="let code of currencyCodes | keyvalue"
+          value="{{ code.value }}"
+        >
+          {{ code.key }} ({{ code.value }})
+        </option>
+      </select>
+      <app-error-feedback *ngIf="false">feedback</app-error-feedback>
+    </div>
+
+    <div class="inputdiv block mb-1">
+      <input
+        name="amount"
+        [(ngModel)]="newChargeLine.amount"
+        type="number"
+        class="dhl-input"
+        placeholder="Enter amount here"
+        [ngClass]="{ feedbackBorder: false }"
+        required
+      />
+      <label class="dhl-label">Amount</label>
+      <app-error-feedback *ngIf="false">feedback</app-error-feedback>
+    </div>
+    <div class="flex justify-end">
+      <div>
+        <button type="button" (click)="closeModal()" class="btn btn-off mr-1">
+          Cancel
+        </button>
+        <button type="submit" [disabled]="false" class="btn btn-secondary">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</app-modal-template>

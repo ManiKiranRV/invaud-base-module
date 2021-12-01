@@ -1,0 +1,199 @@
+{
+  "interchangeHeader": {
+    "sourceSystem": "CW1",
+    "targetSystem": "BLESS",
+    "noOfMessages": "1"
+  },
+  "message": {
+    "messageHeader": {
+      "messageTrigger": "POD",
+      "dateTime": "2021-09-02 12:45:49",
+      "dateTimeOffset": "-06",
+      "sessionId": "6ec380f7-3c55-4e54-bce6-f347df525cce",
+      "bodId": "c34f7db9-4eb9-4b3a-83fe-fcfdf486451a",
+      "dataSource": "ForwardingConsol"
+    },
+    "shipment": {
+      "trackingNo": "9D04215",
+      "shipReferenceId": "S2103456882",
+      "modeOfTransport": "AIR",
+      "waybillCreation": {
+        "dateTime": "2021-08-02 13:00:35",
+        "dateTimeOffset": "-06"
+      },
+      "etd": {
+        "dateTime": "2021-08-03 00:00:00",
+        "dateTimeOffset": "-06"
+      },
+      "eta": {
+        "dateTime": "2021-08-06 00:00:00",
+        "dateTimeOffset": "-06"
+      },
+      "originStation": {
+        "code": "PTY",
+        "name": "Panama, Ciudad de",
+        "country": "PA"
+      },
+      "destinationStation": {
+        "code": "GUA",
+        "name": "Guatemala City",
+        "country": "GT"
+      },
+      "numberOfPieces": "9",
+      "weight": "1120.600",
+      "weightUom": "KGM",
+      "chargeableWeight": "2120.000",
+      "chargeableWeightUom": "KGM",
+      "volume": "12.718",
+      "volumeUom": "MTQ",
+      "freightTerms": "Prepaid",
+      "otherChargesTerms": "Mixed",
+      "shipmentIncoTerms": "CIP",
+      "commodityCode": "TP2",
+      "commodityText": "TEMPERATURE CONTROLLED PASSIVE +2 T",
+      "shipmentServiceCode": "DD3",
+      "shipmentTypeCode": "10",
+      "podSignee": "Cesar Braul",
+      "dangerousGoods": "NO",
+      "valueOfGoods": "100.00", // Needed by I&A
+      "goodsValuta": "USD" // Needed by I&A
+    },
+    "masters": {
+      "master": {
+        "trackingNo": "992-14109266",
+        "mstReferenceId": "C2101760722",
+        "waybillCreation": {
+          "dateTime": "2021-08-13 08:40:36",
+          "dateTimeOffset": "-06"
+        },
+        "carrier": {
+          "code": "D5",
+          "iatacode2l": "D5",
+          "name": "DHL AERO EXPRESO S.A.",
+          "country": "PA"
+        },
+        "transportNumber": "L3216",
+        "origin": {
+          "code": "PTY",
+          "name": "Panama, Ciudad de",
+          "country": "PA"
+        },
+        "destination": {
+          "code": "GUA",
+          "name": "Guatemala City",
+          "country": "GT"
+        },
+        "modeOfTransport": "AIR",
+        "events": [
+          {
+            "eventCode": "BKC",
+            "eventCodeLegacy": "BKD", //optional
+            "description": "Carrier Booking Confirmed",
+            "dateTime": "2021-08-13 16:17:23",
+            "dateTimeOffset": "-05",
+            "locationCode": "PAPTY" //optional
+          }
+        ]
+      }
+    },
+    "addresses": [
+      //first element is consignee
+      {
+        "idSource": "CW1",
+        "id": "PAASC001",
+        "legacyIdOrigin": "PAA2610",
+        "party": "ConsignorDocumentaryAddress",
+        "name": "ASTRAZENECA CAMCAR S.A.",
+        "line": [
+          "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+          "MIT LOGISTIC PARK, COLON FREE ZONE"
+        ],
+        "city": "COLON",
+        "state": "3",
+        "zip": "0302-00503",
+        "country": "PA",
+        "countryName": "Panama",
+        "companyName": "ASTRAZENECA CAMCAR S.A."
+      },
+      {
+        "idSource": "CW1",
+        "id": "PAASC001",
+        "legacyIdOrigin": "PAA2610",
+        "party": "ConsignorDocumentaryAddress",
+        "name": "IBM",
+        "line": [
+          "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+          "MIT LOGISTIC PARK, COLON FREE ZONE"
+        ],
+        "city": "NEW YORK",
+        "state": "3",
+        "zip": "0302-00503",
+        "country": "USA",
+        "countryName": "United States of America",
+        "companyName": "IBM"
+      },
+      {
+        "idSource": "CW1",
+        "id": "PAASC001",
+        "legacyIdOrigin": "PAA2610",
+        "party": "ConsignorDocumentaryAddress",
+        "name": "BillToParty daya",
+        "line": [
+          "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+          "MIT LOGISTIC PARK, COLON FREE ZONE"
+        ],
+        "city": "COLON",
+        "state": "3",
+        "zip": "0302-00503",
+        "country": "PA",
+        "countryName": "Panama",
+        "companyName": "ASTRAZENECA CAMCAR S.A.",
+        "taxId": "DE815546023" //optional billToParty only
+      }
+      // should also include billToParty and Shipper address and account information. Field to distinguish these parties.
+      // Furthermore, billToParty should include a field "taxId"
+    ],
+    "events": [
+      {
+        "eventCode": "DCF",
+        "eventCodeLegacy": "POD", //optional
+        "description": "Proof of Delivery",
+        "dateTime": "2021-09-02 12:45:49",
+        "dateTimeOffset": "-06",
+        "locationCode": "GTGUA" //optional
+      }
+    ],
+    "references": [
+      {
+        "qualifier": "BTD",
+        "description": "This has been added", // Needed for I&A
+        "value": "DHLI-9D04215"
+      }
+    ],
+    "remarks": [
+      {
+        "remarkType": "Customer Order Notes",
+        "text": "The following information from the EDI booking file was not processed by CW1. Please use below overview for consol creation and further data enrichment:\n\n--- General Information ---\nConsol Type:\nContainer Mode:\nPayment Method: PPD\nPort of Loading:\nPort of Discharge:\nVessel Name:\nVoyage / Flight Number:\n\n--- Delivery Address ---\nParty Name: AGENCIAS J I COHEN S. A.\nAddress Line 1: CALZADA ROOSEVELT 6-19 ZONA 3\nAddress Line 2: Guatemala\nPostal Code: .\nCity: GUATEMALA\nCountry: GT\nContact: Eugenia Cotton\nPhone: .\n--- Pickup Address ---\nParty Name: ASTRAZENECA CAMCAR S.A.\nAddress Line 1: C/O COLON IMPORT AND EXPORT\nAddress Line 2: Panama\nPostal Code: COCO SOLO\nCity: COLON FREE ZONE\nCountry: PA\nContact:\nPhone: +5074301733\n--- Loading Information ---\n31 PKG / 417.9 KG\nLoading Meters: 0\nContains Li ion/metal batt: false\nContains Dangerous goods:  false+--- Additional Information ---\nPickup Date: 2021-08-03"
+      }
+    ],
+    "packages": [
+      {
+        "packageCount": "2",
+        "type": "PP",
+        "grossWeight": "1120.600",
+        "grossWeightUom": "KGM",
+        "commodity": "TP2",
+        "length": "47.000",
+        "lengthUom": "INH",
+        "width": "40.000",
+        "widthUom": "INH",
+        "height": "48.000",
+        "heightUom": "INH",
+        "temperatureRange": {
+          "requiredTemperatureMinimum": "2.0",
+          "requiredTemperatureMaximum": "8.0"
+        }
+      }
+    ]
+  }
+}

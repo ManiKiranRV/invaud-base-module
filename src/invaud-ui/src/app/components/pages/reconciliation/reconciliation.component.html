@@ -1,0 +1,26 @@
+<div class="container flex">
+  <div class="flex-grow">
+    <h2 class="introduction_large red-text mb-1 mt-1">Reconciliation</h2>
+    <app-aggrid
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+      [gridOptions]="gridOptions"
+      [emptySearchParams]="emptySearchparams"
+      (onSetData)="setData($event)"
+      (onRowDoubleClickedEvent)="onRowDoubleClicked($event)"
+    >
+    </app-aggrid>
+    <app-row-counter
+      [activePage]="activePage"
+      [numberPerPage]="numberPerPage"
+      [numberOfRows]="numberOfRows"
+    >
+    </app-row-counter>
+    <app-pagination
+      *ngIf="activePage && numberOfRows"
+      [activePage]="activePage"
+      [numberOfPages]="numberOfPages"
+      (onNewPageSet)="newPageHandler($event)"
+    ></app-pagination>
+  </div>
+</div>

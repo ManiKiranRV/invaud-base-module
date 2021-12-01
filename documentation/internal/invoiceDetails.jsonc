@@ -1,0 +1,135 @@
+{
+  "status": "proforma",
+  "locked": "true",
+  "lockedBy": "JohnDoe@dhl.com",
+  "selfBilled": "false",
+  "invoiceNumber": "asdf12345",
+
+  "shipment": {
+    "shipReferenceId": "S2103456882",
+    "waybillCreation": {
+      // Invoice date? if not replace with date of invoice creation
+      "dateTime": "2021-08-02 13:00:35",
+      "dateTimeOffset": "-06"
+    },
+    "etd": {
+      // Shipment date? -- Only require date (no time)
+      "dateTime": "2021-08-03 00:00:00", // ui - Overview
+      "dateTimeOffset": "-06"
+    },
+    "originStation": {
+      "code": "PTY",
+      "name": "Panama, Ciudad de",
+      "country": "PA"
+    },
+    "destinationStation": {
+      "code": "GUA",
+      "name": "Guatemala City",
+      "country": "GT"
+    },
+    "numberOfPieces": "9",
+    "weight": "1120.600",
+    "weightUom": "KGM",
+    "chargeableWeight": "2120.000",
+    "chargeableWeightUom": "KGM",
+    "volume": "12.718",
+    "volumeUom": "MTQ",
+    "freightTerms": "Prepaid",
+    "otherChargesTerms": "Mixed",
+    "shipmentIncoTerms": "CIP",
+    "shipmentServiceCode": "DD3",
+    "valueOfGoods": "100.00",
+    "goodsValuta": "USD"
+  },
+
+  /* ######################################################################### 
+    Address section
+    - Page - invoice details unless otherwise stated
+    ######################################################################### */
+  "shipperAddress": {
+    "id": "PAASC001", // Account number?
+    "name": "ASTRAZENECA CAMCAR S.A.",
+    "line": [
+      "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+      "MIT LOGISTIC PARK, COLON FREE ZONE"
+    ],
+    "city": "COLON",
+    "zip": "0302-00503",
+    "country": "PA",
+    "countryName": "Panama"
+  },
+  "billToPartyAddress": {
+    "id": "PAASC001",
+    "name": "ASTRAZENECA CAMCAR S.A.",
+    "line": [
+      "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+      "MIT LOGISTIC PARK, COLON FREE ZONE"
+    ],
+    "city": "COLON",
+    "zip": "0302-00503",
+    "country": "PA",
+    "countryName": "Panama",
+    "taxId": "DE815546023"
+  },
+  "consigneeAddress": {
+    "id": "PAASC001",
+    "name": "ASTRAZENECA CAMCAR S.A.",
+    "line": [
+      "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+      "MIT LOGISTIC PARK, COLON FREE ZONE"
+    ],
+    "city": "COLON",
+    "zip": "0302-00503",
+    "country": "PA",
+    "countryName": "Panama"
+  },
+
+  /* ######################################################################### 
+    Event chain - track invoice
+    - Page: Invoice details
+    ######################################################################### */
+  "events": [
+    // expectation that events are in chronological order
+    {
+      "description": "Proof of Delivery"
+    }
+  ],
+
+  /* ######################################################################### 
+    References
+    ######################################################################### */
+  "references": [
+    // Is array with pagination, separate query?
+    {
+      "qualifier": "BTD",
+      "description": "This has been added",
+      "value": "DHLI-9D04215"
+    }
+  ],
+  /* ######################################################################### 
+    Here is the rules engine contribution 
+    ######################################################################### */
+  "invoiceCurrency": "USD",
+  "chargeLines": [
+    // Is array with pagination, separate query?
+    {
+      "chargeCode": "OTHF",
+      "chargeDescription": "Origin terminal handling-Forwarder",
+      "chargeAmount": 150.0
+    }
+  ],
+
+  /* ######################################################################### 
+    Additional documents
+    ######################################################################### */
+
+  "additionalDocuments": [
+    // Is array, separate query?
+    {
+      "name": "Supplier provided invoice",
+      "format": "PDF",
+      "createdBy": "supplier one",
+      "createdDate": "2021-08-03 00:00:00"
+    }
+  ]
+}

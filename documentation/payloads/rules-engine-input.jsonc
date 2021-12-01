@@ -1,0 +1,13 @@
+{
+  "id": "1234567890", // unique ID for redundancy
+  "customerId": "PAASC001", // Identify the account
+  "originCountry": "CHINA",
+  "destinationCountry": "JAPAN",
+  "modeOfTransport": "AIR", // Name change for consistency
+  "incoTerms": "DAT", // Is this unique for rules engine input
+  "serviceTypes": "DOOR-TO-PORT",
+  "weight": "1120.600",
+  "weightUom": "KGM",
+  "volume": "12.718",
+  "volumeUom": "MTQ"
+}

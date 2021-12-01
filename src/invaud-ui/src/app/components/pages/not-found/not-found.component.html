@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <h1 class="main_headline">Sorry!</h1>
+  <p class="copy">
+    Unfortunately the page you are looking for is unavailable or no longer
+    exists.
+  </p>
+  <h3 class="paragraph_header">Maybe You Were Looking for One of These?</h3>
+  <div class="flex justify-center">
+    <a
+      class="emphasis"
+      *ngFor="let quicknavlink of quicknavlinks"
+      routerLink="{{ quicknavlink.route }}"
+    >
+      <div class="bg-lightgrey icon-bg">
+        <img src="{{ quicknavlink.icon }}" />
+      </div>
+      <span>{{ quicknavlink.label }}</span>
+    </a>
+  </div>
+</div>

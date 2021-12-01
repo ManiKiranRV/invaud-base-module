@@ -1,0 +1,13 @@
+{
+  "id": "1234567890",
+  "customerId": "PAASC001",
+  "originCountry": "CHINA",
+  "destinationCountry": "JAPAN",
+  "modeOfTransport": "AIR",
+  "incoTerms": "DAT",
+  "serviceTypes": "DOOR-TO-PORT",
+  "weight": "1120.600",
+  "weightUom": "KGM",
+  "volume": "12.718",
+  "volumeUom": "MTQ"
+}

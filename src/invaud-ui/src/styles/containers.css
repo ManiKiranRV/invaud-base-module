@@ -1,0 +1,59 @@
+/* ####################################
+Defaults
+#################################### */
+body {
+  font-family: 'DeliveryRegular';
+  color: var(--black);
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ####################################
+Custom Classes
+#################################### */
+.hidden {
+  display: none;
+}
+
+.bg-lightgrey {
+  background-color: var(--lightgrey);
+}
+
+.container {
+  max-width: 85%;
+  margin: auto;
+}
+
+.data-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.data-row > p {
+  flex: 1;
+  margin: 0.25rem 0rem 0.25rem 0rem;
+}
+
+.data-row > p.narrow-column {
+  flex: 0;
+  padding: 0rem 2rem;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex: 1;
+  background-color: var(--lightgrey);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+}
+
+.block {
+  display: block !important;
+}
+
+.min-width-300 {
+  min-width: 300px;
+}

@@ -1,0 +1,14 @@
+<ag-grid-angular
+  style="width: 100%; flex: 1 1 auto"
+  class="ag-theme-alpine"
+  domLayout="autoHeight"
+  [rowData]="rowData"
+  [gridOptions]="gridOptions"
+  [columnDefs]="columnDefs"
+  (gridReady)="onGridReady($event)"
+  (sortChanged)="onSortChanged()"
+  (filterChanged)="onFilterChanged()"
+  (rowDataChanged)="onRowDataChanged()"
+  (rowDoubleClicked)="onRowDoubleClicked($event)"
+>
+</ag-grid-angular>

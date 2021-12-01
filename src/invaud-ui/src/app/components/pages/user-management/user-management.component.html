@@ -1,0 +1,40 @@
+<div class="m-2">
+  <div class="flex space-between">
+    <button (click)="clearFilters()" class="btn btn-secondary mb-1">
+      Clear Filters
+    </button>
+    <button (click)="openModal('add')" class="btn btn-primary mb-1">
+      Add new user
+    </button>
+  </div>
+
+  <app-user-modal
+    (closeModalEvent)="closeModal()"
+    (dataChangedFromModal)="dataChangedFromModalHandler()"
+    [modal]="modal"
+    [modalType]="modalType"
+    [editUser]="editUser"
+    [currentUserRole]="userProfile?.role"
+  ></app-user-modal>
+  <app-aggrid
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [gridOptions]="gridOptions"
+    [emptySearchParams]="emptyUsersSearchparams"
+    (onSetData)="setData($event)"
+    (onRowDoubleClickedEvent)="onRowDoubleClicked($event)"
+  >
+  </app-aggrid>
+  <app-row-counter
+    [activePage]="activePage"
+    [numberPerPage]="numberPerPage"
+    [numberOfRows]="numberOfRows"
+  >
+  </app-row-counter>
+  <app-pagination
+    *ngIf="activePage && numberOfRows"
+    [activePage]="activePage"
+    [numberOfPages]="numberOfPages"
+    (onNewPageSet)="newPageHandler($event)"
+  ></app-pagination>
+</div>

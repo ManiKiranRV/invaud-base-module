@@ -1,0 +1,41 @@
+<div class="flex-row space-between align-center">
+  <h3 class="emphasis">Additional Charges</h3>
+  <button
+    *ngIf="user.role === 'forwarder'"
+    (click)="openModal('add')"
+    class="btn btn-secondary"
+  >
+    Add New
+  </button>
+  <!-- <button (click)="" class="btn btn-secondary">Reject</button>
+    <button (click)="" class="btn btn-primary">Approve</button> -->
+</div>
+<app-aggrid
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  [gridOptions]="gridOptions"
+  [emptySearchParams]="emptyChargeLinesSearchParams"
+  (onSetData)="setData($event)"
+  (onRowDoubleClickedEvent)="onRowDoubleClicked($event)"
+>
+</app-aggrid>
+<app-row-counter
+  [activePage]="activePage"
+  [numberPerPage]="numberPerPage"
+  [numberOfRows]="numberOfRows"
+>
+</app-row-counter>
+<app-pagination
+  *ngIf="activePage && numberOfRows"
+  [activePage]="activePage"
+  [numberOfPages]="numberOfPages"
+  (onNewPageSet)="newPageHandler($event)"
+></app-pagination>
+<app-new-charge-line-modal
+  *ngIf="modal"
+  [modal]="modal"
+  [modalType]="modalType"
+  [editValue]="editValue"
+  (submitEvent)="onSubmit($event)"
+  (closeModalEvent)="closeModal()"
+></app-new-charge-line-modal>

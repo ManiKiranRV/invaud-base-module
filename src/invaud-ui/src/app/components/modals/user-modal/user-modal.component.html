@@ -1,0 +1,185 @@
+<app-modal-template
+  *ngIf="modal"
+  [dismissable]="true"
+  (closeEvent)="closeModal()"
+>
+  <h2 class="main-headline red-text">
+    {{ modalType === 'add' ? 'Add user' : 'Edit user' }}
+  </h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="inputdiv block mb-1">
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        class="dhl-input"
+        placeholder="John"
+        formControlName="firstName"
+        [ngClass]="{ feedbackBorder: showFeedback('firstName') }"
+        required
+      />
+      <label class="dhl-label"> First Name </label>
+      <app-error-feedback *ngIf="showFeedback('firstName')">{{
+        feedback.firstName
+      }}</app-error-feedback>
+    </div>
+    <div class="inputdiv block mb-1">
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        class="dhl-input"
+        [ngClass]="{ feedbackBorder: showFeedback('lastName') }"
+        placeholder="Doe"
+        formControlName="lastName"
+        required
+      />
+      <label class="dhl-label"> Last Name </label>
+      <app-error-feedback *ngIf="showFeedback('lastName')">{{
+        feedback.lastName
+      }}</app-error-feedback>
+    </div>
+    <div class="inputdiv block mb-1">
+      <input
+        type="text"
+        id="email"
+        name="email"
+        class="dhl-input"
+        placeholder="john.doe@dhl.com"
+        formControlName="email"
+        [ngClass]="{ feedbackBorder: showFeedback('email') }"
+        required
+      />
+      <label class="dhl-label"> Email </label>
+      <app-error-feedback *ngIf="showFeedback('email')">{{
+        feedback.email
+      }}</app-error-feedback>
+    </div>
+    <div
+      class="mb-1 pointer underline"
+      (click)="toggleShowPasswordReset()"
+      *ngIf="modalType === 'edit'"
+    >
+      Reset Password
+    </div>
+    <div
+      *ngIf="modalType === 'add' || (modalType === 'edit' && showPasswordReset)"
+      class="inputdiv block mb-2"
+    >
+      <input
+        type="password"
+        name="password"
+        class="dhl-input"
+        placeholder="password"
+        formControlName="password"
+        [ngClass]="{ feedbackBorder: showFeedback('password') }"
+      />
+      <label class="dhl-label"> Password </label>
+      <app-error-feedback *ngIf="showFeedback('password')">{{
+        feedback.password
+      }}</app-error-feedback>
+    </div>
+    <span
+      *ngIf="modalType === 'add'"
+      class="emphasis mb-1 block"
+      >Role</span
+    >
+    <div *ngIf="currentUserRole !== 'super_admin'" class="dhl-radiodiv">
+      <!-- <label class="mb-1"
+        ><input
+          name="role"
+          formControlName="role"
+          type="radio"
+          value="shipper"
+        />
+        <div><div></div></div>
+        <span>Shipper</span></label
+      >
+      <label class="mb-1"
+        ><input
+          name="role"
+          formControlName="role"
+          type="radio"
+          value="forwarder"
+        />
+        <div><div></div></div>
+        <span>Forwarder</span></label
+      >
+     <label class="mb-1"
+        ><input
+          name="role"
+          formControlName="role"
+          type="radio"
+          value="fba"
+        />
+        <div><div></div></div>
+        <span>Freight Bill Auditor</span></label
+      >  -->
+      <label *ngIf="modalType === 'add'" class="mb-1"
+        ><input name="role" formControlName="role" type="radio" value="user" />
+        <div><div></div></div>
+        <span>User</span></label
+      >
+      <label *ngIf="modalType === 'add'" class="mb-1"
+        ><input name="role" formControlName="role" type="radio" value="admin" />
+        <div><div></div></div>
+        <span>Admin</span></label
+      >
+      <app-error-feedback *ngIf="showFeedback('role')">{{
+        feedback.role
+      }}</app-error-feedback>
+    </div>
+    <div *ngIf="currentUserRole === 'super_admin'" class="dhl-radiodiv">
+      <label class="mb-1">
+        <div><div></div></div>
+        <span>Admin</span></label
+      >
+    </div>
+    <div class="flex space-between">
+      <div class="flex">
+        <button
+          *ngIf="modalType !== 'add'"
+          type="button"
+          (click)="openWarningModal()"
+          class="btn btn-off pl-0"
+        >
+          Delete
+        </button>
+      </div>
+
+      <div class="flex">
+        <button type="button" (click)="closeModal()" class="btn btn-off mr-1">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          [disabled]="!userForm.valid"
+          class="btn btn-secondary"
+        >
+          {{ modalType === 'add' ? 'Add' : 'Save' }}
+        </button>
+      </div>
+    </div>
+  </form>
+</app-modal-template>
+
+<app-modal-template
+  *ngIf="showWarningModal"
+  [dismissable]="true"
+  (closeEvent)="closeWarningModal()"
+>
+  <h4 class="emphasis">Delete User</h4>
+  <p>This user will no longer have access to the application.</p>
+  <div class="flex flex-end">
+    <button
+      type="button"
+      (click)="closeWarningModal()"
+      class="btn btn-off mr-1"
+    >
+      Cancel
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="deleteUser()">
+      Delete
+    </button>
+  </div>
+</app-modal-template>

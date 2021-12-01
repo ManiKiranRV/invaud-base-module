@@ -1,0 +1,24 @@
+<div class="flex-row space-between align-center">
+  <h3 class="emphasis">References</h3>
+</div>
+<app-aggrid
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  [gridOptions]="gridOptions"
+  [emptySearchParams]="emptyReferencesSearchParams"
+  (onSetData)="setData($event)"
+  (onRowDoubleClickedEvent)="onRowDoubleClicked($event)"
+>
+</app-aggrid>
+<!-- <app-row-counter
+  [activePage]="activePage"
+  [numberPerPage]="numberPerPage"
+  [numberOfRows]="numberOfRows"
+>
+</app-row-counter>
+<app-pagination
+  *ngIf="activePage && numberOfRows"
+  [activePage]="activePage"
+  [numberOfPages]="numberOfPages"
+  (onNewPageSet)="newPageHandler($event)"
+></app-pagination> -->

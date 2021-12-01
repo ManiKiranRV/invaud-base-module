@@ -1,0 +1,26 @@
+.banner-wrapper {
+  width: 100%;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%), 0 2px 12px 0 rgb(0 0 0 / 10%),
+    0 0 1px 0 rgb(0 0 0 / 10%);
+  height: 64px;
+  display: flex;
+  padding: 0 24px;
+  justify-content: space-between;
+}
+.flex-right {
+  padding-right: 24px;
+}
+.text-wrapper {
+  align-self: center;
+}
+.locker-wrapper {
+  align-self: center;
+}
+.button-wrapper {
+  margin: 0.5rem 0 0.5rem 2rem;
+}
+.btn {
+  height: 48px;
+  width: 128px;
+  margin-right: 1rem;
+}

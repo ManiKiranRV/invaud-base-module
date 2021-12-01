@@ -1,0 +1,143 @@
+{
+  "status": "proforma",
+  "locked": "true", // optional
+  "lockedBy": "JohnDoe@dhl.com",
+  "selfBilled": "false",
+  "invoiceNumber": "asdf12345",
+
+  /* ######################################################################### 
+  From here down is fields taken directly from shipment/ rules engine
+  ######################################################################### */
+  "shipment": {
+    "trackingNo": "9D04215", 
+    "shipReferenceId": "S2103456882",
+    "modeOfTransport": "AIR",
+    "waybillCreation": {
+      // Invoice date? if not replace with date of invoice creation
+      "dateTime": "2021-08-02 13:00:35",
+      "dateTimeOffset": "-06"
+    },
+    "etd": {
+      // Shipment date? -- Only require date (no time)
+      "dateTime": "2021-08-03 00:00:00", // ui - Overview
+      "dateTimeOffset": "-06"
+    },
+    "originStation": {
+      "code": "PTY", //  ui - Overview + Invoice details
+      "name": "Panama, Ciudad de", //  ui - Invoice details
+      "country": "PA" //  ui - Invoice details
+    },
+    "destinationStation": {
+      "code": "GUA", //  ui - Overview + Invoice details
+      "name": "Guatemala City", //  ui - Invoice details
+      "country": "GT" //  ui - Invoice details
+    },
+    "numberOfPieces": "9", //  ui - Invoice details
+    "weight": "1120.600", //  ui - Invoice details
+    "weightUom": "KGM", //  ui - Invoice details
+    "chargeableWeight": "2120.000", //  ui - Invoice details
+    "chargeableWeightUom": "KGM", //  ui - Invoice details
+    "volume": "12.718", //  ui - Invoice details
+    "volumeUom": "MTQ", //  ui - Invoice details
+    "freightTerms": "Prepaid", //  ui - Invoice details
+    "otherChargesTerms": "Mixed",
+    "shipmentIncoTerms": "CIP", //  ui - Invoice details
+    "shipmentServiceCode": "DD3", //  ui - Invoice details
+    "valueOfGoods": "100.00", //  ui - Overview + Invoice details
+    "goodsValuta": "USD" //  ui - Overview + Invoice details
+  },
+
+  /* ######################################################################### 
+  Address section
+  - Page - invoice details unless otherwise stated
+  ######################################################################### */
+  "shipperAddress": {
+    "id": "PAASC001", // Account number?
+    "name": "ASTRAZENECA CAMCAR S.A.", //overview
+    "line": [
+      "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+      "MIT LOGISTIC PARK, COLON FREE ZONE"
+    ],
+    "city": "COLON",
+    "zip": "0302-00503",
+    "country": "PA",
+    "countryName": "Panama"
+  },
+  "billToPartyAddress": {
+    "id": "PAASC001",
+    "name": "ASTRAZENECA CAMCAR S.A.", //overview
+    "line": [
+      "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+      "MIT LOGISTIC PARK, COLON FREE ZONE"
+    ],
+    "city": "COLON",
+    "zip": "0302-00503",
+    "country": "PA",
+    "countryName": "Panama",
+    "taxId": "DE815546023"
+  },
+  "consigneeAddress": {
+    "id": "PAASC001",
+    "name": "ASTRAZENECA CAMCAR S.A.", //overview
+    "line": [
+      "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+      "MIT LOGISTIC PARK, COLON FREE ZONE"
+    ],
+    "city": "COLON",
+    "zip": "0302-00503",
+    "country": "PA",
+    "countryName": "Panama"
+  },
+
+  /* ######################################################################### 
+  Event chain - track invoice
+  - Page: Invoice details
+  ######################################################################### */
+  "events": [
+    // expectation that events are in chronological order
+    {
+      "description": "Proof of Delivery" //  ui - Invoice details
+    }
+  ],
+
+  /* ######################################################################### 
+  References
+    - Page: Invoice details
+  ######################################################################### */
+  "references": [
+    // Is array with pagination, separate query?
+    {
+      "qualifier": "BTD",
+      "description": "This has been added",
+      "value": "DHLI-9D04215"
+    }
+  ],
+  /* ######################################################################### 
+  Here is the rules engine contribution 
+    - Page: Invoice details
+  ######################################################################### */
+  "invoiceCurrency": "USD",
+  "chargeLines": [
+    // Is array with pagination, separate query?
+    {
+      "chargeCode": "OTHF",
+      "chargeDescription": "Origin terminal handling-Forwarder",
+      "chargeAmount": 150.0
+    }
+  ],
+
+    /* ######################################################################### 
+    Additional documents
+      - Page: Invoice details
+    ######################################################################### */
+
+  "additionalDocuments": [
+    // Is array, separate query?
+    {
+      "name": "Supplier provided invoice",
+      "format": "PDF",
+      "createdBy": "supplier one",
+      "createdDate": "2021-08-03 00:00:00"
+    }
+  ]
+}

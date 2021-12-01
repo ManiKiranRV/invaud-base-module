@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "workspaces": [
+  "./*"
+  ],
+  "devDependencies": {
+    "husky": "^6.0.0"
+  },
+  "scripts": {
+    "prepare": "cd .. && husky install src/.husky",
+    "test:all": "yarn workspaces run test"
+  }
+}

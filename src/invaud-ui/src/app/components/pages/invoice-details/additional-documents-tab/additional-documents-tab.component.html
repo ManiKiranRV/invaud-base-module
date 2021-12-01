@@ -1,0 +1,21 @@
+<div class="flex-row space-between align-center">
+  <h3 class="emphasis">Additional Documents</h3>
+  <button (click)="openModal()" class="btn btn-secondary">Upload</button>
+</div>
+<div class="info-box p-2 mb-2">
+  <div class="data-row m-05" *ngFor="let document of additionalDocuments">
+    <p class="bold-text">
+      <a>
+        <u>{{ document.title }}</u>
+      </a>
+    </p>
+    <p class="narrow-column">
+      {{ document.format }}
+    </p>
+    <p align="right">{{ document.details }}</p>
+  </div>
+</div>
+<app-additional-documents-modal
+  [modal]="modal"
+  (closeModalEvent)="closeModal()"
+></app-additional-documents-modal>

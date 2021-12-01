@@ -1,0 +1,26 @@
+<div *ngIf="userRole === 'shipper'" class="center p-025 pl-0">
+  <button
+    class="btn btn-primary mr-1"
+    [disabled]="disabled"
+    (click)="onClick('approve')"
+  >
+    Approve
+  </button>
+  <button
+    class="btn btn-secondary"
+    [disabled]="disabled"
+    (click)="onClick('reject')"
+  >
+    Reject
+  </button>
+</div>
+<div *ngIf="userRole === 'forwarder'" class="center p-025 pl-0">
+  <button
+    class="btn btn-primary"
+    [disabled]="disabled"
+    (click)="onClick('edit')"
+  >
+    Amend
+  </button>
+
+</div>

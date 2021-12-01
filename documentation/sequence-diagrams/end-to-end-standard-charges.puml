@@ -1,0 +1,82 @@
+# end-to-end-standard-charges
+
+## status
+
+- #lightgreen = draft
+- #lightblue = submited
+- #lightpink = active
+- #lightgray = archived
+
+@startuml pickupevent
+|S| Shipment module
+|O| Order module
+|T| Transformer
+|R| Rule engine
+|B| BLESS platform
+|I| Invoice & Audit module
+
+|O|
+start
+: Order data;
+
+|B|
+: Order data;
+
+|I|
+: Consume & store order data;
+end
+
+
+|S|
+start
+: Pick up event;
+
+|B|
+: Pick up file;
+
+|I|
+: Consume & store pickup file;
+: Match pickup file with stored order;
+: Generate rule engine request;
+
+|R| 
+: Generate DRAFT Proforma;
+note left
+  Mocked during development
+end note
+
+|I|
+: Receive & store DRAFT proforma;
+
+end
+
+|O|
+start
+: Proof of delivery event;
+
+|B|
+: Proof of delivery event;
+
+|I|
+: Change status of order;
+end
+
+|T| 
+start
+: Forwarder invoice received;
+
+|B|
+: Invoice data received;
+
+|I|
+: Consume & store forwarder invoice;
+: Match forwarder invoice with stored order data;
+
+partition "See diagram" {
+: Handle additional charges;
+}
+partition "See diagram"
+: Handle reconciliation;
+}
+end
+@enduml

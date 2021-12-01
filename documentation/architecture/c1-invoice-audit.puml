@@ -1,0 +1,21 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(forwarder, "Forwarder", "Manages carriers / the shipment. Enters additional charges.")
+Person(customer, "Customer", "Approved additional charges. Pays for the shipment.")
+System(invaud_forwarder, "Invoice & Audit module instance", "Fixed forwarder user role")
+System(invaud_customer, "Invoice & Audit module instance", "Fixed customer user role")
+System_Ext(bless, "BLESS", "Kafka topics")
+
+Rel(forwarder, invaud_forwarder, "Uses")
+Rel(customer, invaud_customer, "Uses")
+
+Rel(invaud_forwarder, bless, "Produces to topic")
+Rel(invaud_customer, bless, "Produces to topic")
+
+Rel(bless, invaud_forwarder, "Consumes from topic")
+Rel(bless, invaud_customer, "Consumes from topic")
+
+@enduml

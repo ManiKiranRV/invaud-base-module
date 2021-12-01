@@ -1,0 +1,12 @@
+{
+  "/api/*": {
+    "target": {
+      "host": "invaud_backend_forwarder",
+      "port": 3030,
+      "protocol": "http:"
+    },
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

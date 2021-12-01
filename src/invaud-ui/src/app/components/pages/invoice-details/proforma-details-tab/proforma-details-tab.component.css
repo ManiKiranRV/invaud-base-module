@@ -1,0 +1,6 @@
+/* This can probably be brought into main, if such headers reused */
+.section-header {
+  font-family: "DeliveryBold";
+  margin-bottom: 0.5rem;
+  margin-top: 0rem;
+}

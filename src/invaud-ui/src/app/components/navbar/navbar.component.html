@@ -1,0 +1,25 @@
+<nav>
+  <div class="top_row">
+    <a class="logo_link" routerLink="/">
+      <img class="logo" src="assets/icons/dhl_logo.svg" alt="" />
+    </a>
+  </div>
+  <div class="links-wrapper mr-4">
+    <ul *ngIf="userProfile" class="links-ul">
+      <li class="links-li" *ngFor="let navlink of navlinks">
+        <a
+          routerLink="{{ navlink.route }}"
+          [routerLinkActive]="['is-active']"
+          class="links-a emphasis"
+        >
+          {{ navlink.label }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="links-wrapper">
+    <a *ngIf="userProfile" (click)="onLogout()" class="links-a emphasis mr-2">
+      Log out
+    </a>
+  </div>
+</nav>

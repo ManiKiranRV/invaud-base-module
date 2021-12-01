@@ -1,0 +1,99 @@
+/* ####################################
+Defaults
+#################################### */
+
+h1 {
+  font-size: 2.5em;
+  font-family: "DeliveryBold";
+}
+
+h2 {
+  font-size: 1.875em;
+  font-family: "DeliveryBold";
+}
+
+h3 {
+  font-size: 1.25em;
+  font-family: "DeliveryBlackCd";
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 0.875em;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* ####################################
+Custom Classes
+#################################### */
+
+.bold-text {
+  font-size: 1em;
+  font-family: "DeliveryBold";
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.main_headline {
+  font-family: "DeliveryBlackCd";
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+.topline .subline {
+  font-family: "DeliveryLightCd";
+}
+
+.secondary_headline {
+  font-family: "DeliveryBlackCd";
+}
+
+.paragraph_header {
+  font-family: "DeliveryBlackCd";
+  font-size: 1.8rem;
+}
+
+.introduction_large {
+  font-family: "DeliveryLightCd";
+}
+.introduction_small {
+  font-family: "DeliveryLight";
+}
+
+.copy {
+  font-family: "DeliveryRegular";
+}
+
+.emphasis {
+  font-family: "DeliveryBold";
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ToDo find these and check if they're red or primary */
+.red-text {
+  color: red;
+}
+
+.yellow-text {
+  color: var(--brand-warning);
+}
+
+.black-text {
+  color: var(--black);
+}
+
+.footer-text {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.875rem;
+}

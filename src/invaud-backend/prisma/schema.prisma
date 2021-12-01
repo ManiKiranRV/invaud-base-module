@@ -1,0 +1,198 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+//Config
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+//mariadb
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["selectRelationCount", "referentialActions"]
+}
+
+model InvoiceOverview {
+  invoiceNumber     String        @id
+  status            InvoiceStatus
+  originCode        String
+  destinationCode   String
+  shipmentDate      DateTime
+  invoiceDate       DateTime
+  billToParty       String
+  shipper           String
+  consignee         String
+  totalValueOfGoods Float
+  locked            Boolean       @default(false)
+  lockedBy          String?
+}
+
+model Invoice {
+  invoiceNumber       String               @id
+  status              InvoiceStatus
+  selfBilled          Boolean
+  invoiceDate         DateTime
+  invoiceCurrency     String?
+  locked              Boolean              @default(false)
+  lockedBy            String?
+  shipment            Shipment             @relation(fields: [shipReferenceId], references: [shipReferenceId])
+  shipperAddress      Address?             @relation("shipper")
+  consigneeAddress    Address?             @relation("consignee")
+  billToPartyAddress  Address?             @relation("billToParty")
+  chainEvents         ChainEvent[]
+  references          Reference[]
+  chargeLines         ChargeLine[]
+  additionalDocuments AdditionalDocument[]
+  shipReferenceId     String               @unique
+}
+
+model Shipment {
+  shipReferenceId     String    @id
+  trackingNumber      String
+  modeOfTransport     String
+  shipmentDate        DateTime
+  stations            Station[]
+  numberOfPieces      String
+  weight              Float
+  weightUom           String
+  chargeableWeight    Float
+  chargeableWeightUom String
+  volume              Float
+  volumeUom           String
+  freightTerms        String
+  otherChargesTerms   String
+  shipmentIncoTerms   String
+  shipmentServiceCode String
+  valueOfGoods        Float
+  goodsValuta         String
+  Invoice             Invoice?
+  invoiceNumber       String    @unique
+}
+
+model Station {
+  id              String      @id @default(uuid())
+  type            StationType
+  code            String
+  name            String
+  country         String
+  Shipment        Shipment?   @relation(fields: [shipReferenceId], references: [shipReferenceId])
+  shipReferenceId String
+}
+
+model Address {
+  id                       String      @id @default(uuid())
+  type                     AddressType
+  name                     String
+  addressLine1             String
+  addressLine2             String
+  city                     String
+  zip                      String
+  country                  String
+  countryName              String
+  taxId                    String?
+  shipperInvoice           Invoice?    @relation("shipper", fields: [shipperInvoiceNumber], references: [invoiceNumber])
+  shipperInvoiceNumber     String?     @unique
+  consigneeInvoice         Invoice?    @relation("consignee", fields: [consigneeInvoiceNumber], references: [invoiceNumber])
+  consigneeInvoiceNumber   String?     @unique
+  billToPartyInvoice       Invoice?    @relation("billToParty", fields: [billToPartyInvoiceNumber], references: [invoiceNumber])
+  billToPartyInvoiceNumber String?     @unique
+}
+
+model ChainEvent {
+  id            String   @id @default(uuid())
+  type          String
+  time          DateTime
+  description   String
+  Invoice       Invoice? @relation(fields: [invoiceNumber], references: [invoiceNumber])
+  invoiceNumber String?
+}
+
+model Reference {
+  id            String   @id @default(uuid())
+  qualifier     String
+  description   String
+  value         String
+  Invoice       Invoice? @relation(fields: [invoiceNumber], references: [invoiceNumber])
+  invoiceNumber String?
+}
+
+model ChargeLine {
+  id               String            @id @default(uuid())
+  code             String
+  description      String
+  amount           Float
+  currency         String
+  additionalCharge Boolean
+  status           ChargeLineStatus?
+  Invoice          Invoice?          @relation(fields: [invoiceNumber], references: [invoiceNumber])
+  invoiceNumber    String
+}
+
+model AdditionalDocument {
+  id            String   @id @default(uuid())
+  name          String
+  format        String
+  createdBy     String
+  createdDate   String
+  Invoice       Invoice? @relation(fields: [invoiceNumber], references: [invoiceNumber])
+  invoiceNumber String?
+}
+
+model User {
+  id                     String        @id @default(uuid())
+  password               String
+  firstName              String
+  lastName               String
+  email                  String
+  role                   UserRole
+  locked                 Boolean       @default(false)
+  archived               Boolean       @default(false)
+  failedLoginAttempts    Int           @default(0)
+  passwordChangeRequired Boolean       @default(false)
+  createdAt              DateTime      @default(now())
+  updatedAt              DateTime      @updatedAt
+  archivedAt             DateTime?
+  refreshToken           RefreshToken?
+}
+
+model RefreshToken {
+  token  String @id @db.VarChar(500)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @unique
+}
+
+enum InvoiceStatus {
+  Proforma
+  Adaptation
+  Posted
+  Reconciled
+  Released
+  Settled
+  Exception
+}
+
+enum ChargeLineStatus {
+  Pending
+  Approved
+  Rejected
+}
+
+enum StationType {
+  origin
+  destination
+}
+
+enum AddressType {
+  shipper
+  consignee
+  billToParty
+}
+
+enum UserRole {
+  shipper
+  forwarder
+  fba
+  admin
+  super_admin
+}

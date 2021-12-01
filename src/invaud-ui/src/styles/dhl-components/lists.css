@@ -1,0 +1,79 @@
+.dhl-vertical-list {
+  padding: 0;
+  --success: #76bd22;
+  --success-dark: #007c39;
+}
+
+.dhl-vertical-list li {
+  /* Text */
+  position: relative;
+  font-size: 1rem;
+  padding: 0.3125rem 2rem 2rem 3rem;
+  margin: 0px;
+  counter-increment: section;
+  /* list-style:none; */
+}
+
+.dhl-vertical-list li:after {
+  /* Bullet points */
+  position: absolute;
+  content: counter(section);
+  text-align: center;
+  font-size: 1rem;
+  color: var(--black);
+  font-family: "DeliveryBold";
+
+  height: 1.875rem;
+  width: 1.875rem;
+  line-height: 1.875rem;
+  background-color: var(--success);
+
+  border: 0.0625rem solid;
+  border-radius: 50%;
+
+  top: 0;
+  right: 100%;
+  margin-right: -2rem;
+}
+
+.dhl-vertical-list li:before {
+  /* lines */
+  position: absolute;
+  content: "";
+
+  height: 100%;
+  width: 0.25rem;
+  background-color: var(--success);
+  box-shadow: inset -1px 0 0 0 var(--success-dark);
+
+  left: 0.875rem;
+}
+
+.dhl-vertical-list li:last-child::before {
+  /* last line */
+  height: 0rem;
+}
+
+.dhl-vertical-list li.active::after {
+  /* Active bullet point */
+  background-color: white;
+  border-color: var(--black);
+  border-width: 0.1875rem; /* calculation for consistent sizing height = 2 - 2*border-width */
+  height: 1.625rem;
+  width: 1.625rem;
+  line-height: 1.625rem;
+}
+
+.dhl-vertical-list li.active::before,
+.dhl-vertical-list li.active ~ li::before {
+  /* every line after active bullet point */
+  box-shadow: inset -1px 0 0 0 #00000059;
+  background-color: #0000001a;
+}
+
+.dhl-vertical-list li.active ~ li::after {
+  /* every bullet point after active */
+  background-color: white;
+  border-color: #00000073;
+  color: #00000073;
+}

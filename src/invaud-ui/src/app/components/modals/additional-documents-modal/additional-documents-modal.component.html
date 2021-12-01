@@ -1,0 +1,20 @@
+<app-modal-template
+  *ngIf="modal"
+  [dismissable]="true"
+  (closeEvent)="closeModal()"
+>
+  <h2 class="main-headline red-text">Upload</h2>
+  <div class="info-box border-dashed bw1 mb-1">
+    <p>Drop here to upload</p>
+  </div>
+  <div class="flex justify-end">
+    <div>
+      <button type="button" (click)="closeModal()" class="btn btn-off mr-1">
+        Cancel
+      </button>
+      <button type="submit" [disabled]="false" class="btn btn-secondary">
+        Upload
+      </button>
+    </div>
+  </div>
+</app-modal-template>

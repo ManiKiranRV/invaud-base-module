@@ -1,0 +1,107 @@
+{
+  "status": "proforma",
+  "locked": "true",
+  "lockedBy": "JohnDoe@dhl.com",
+  "selfBilled": "false",
+  "invoiceNumber": "asdf12345",
+  "shipment": {
+    "trackingNo": "9D04215",
+    "shipReferenceId": "S2103456882",
+    "modeOfTransport": "AIR",
+    "waybillCreation": {
+      "dateTime": "2021-08-02 13:00:35",
+      "dateTimeOffset": "-06"
+    },
+    "etd": {
+      "dateTime": "2021-08-03 00:00:00"
+    },
+    "originStation": {
+      "code": "PTY",
+      "name": "Panama, Ciudad de",
+      "country": "PA"
+    },
+    "destinationStation": {
+      "code": "GUA",
+      "name": "Guatemala City",
+      "country": "GT"
+    },
+    "numberOfPieces": "9",
+    "weight": "1120.600",
+    "weightUom": "KGM",
+    "chargeableWeight": "2120.000",
+    "chargeableWeightUom": "KGM",
+    "volume": "12.718",
+    "volumeUom": "MTQ",
+    "freightTerms": "Prepaid",
+    "otherChargesTerms": "Mixed",
+    "shipmentIncoTerms": "CIP",
+    "shipmentServiceCode": "DD3",
+    "valueOfGoods": "100.00",
+    "goodsValuta": "USD"
+  },
+  "shipperAddress": {
+    "id": "PAASC001",
+    "name": "ASTRAZENECA CAMCAR S.A.",
+    "line": [
+      "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+      "MIT LOGISTIC PARK, COLON FREE ZONE"
+    ],
+    "city": "COLON",
+    "zip": "0302-00503",
+    "country": "PA",
+    "countryName": "Panama"
+  },
+  "billToPartyAddress": {
+    "id": "PAASC001",
+    "name": "ASTRAZENECA CAMCAR S.A.",
+    "line": [
+      "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+      "MIT LOGISTIC PARK, COLON FREE ZONE"
+    ],
+    "city": "COLON",
+    "zip": "0302-00503",
+    "country": "PA",
+    "countryName": "Panama",
+    "taxId": "DE815546023"
+  },
+  "consigneeAddress": {
+    "id": "PAASC001",
+    "name": "ASTRAZENECA CAMCAR S.A.",
+    "line": [
+      "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+      "MIT LOGISTIC PARK, COLON FREE ZONE"
+    ],
+    "city": "COLON",
+    "zip": "0302-00503",
+    "country": "PA",
+    "countryName": "Panama"
+  },
+  "events": [
+    {
+      "description": "Proof of Delivery"
+    }
+  ],
+  "references": [
+    {
+      "qualifier": "BTD",
+      "description": "This has been added",
+      "value": "DHLI-9D04215"
+    }
+  ],
+  "invoiceCurrency": "USD",
+  "chargeLines": [
+    {
+      "chargeCode": "OTHF",
+      "chargeDescription": "Origin terminal handling-Forwarder",
+      "chargeAmount": 150.0
+    }
+  ],
+  "additionalDocuments": [
+    {
+      "name": "Supplier provided invoice",
+      "format": "PDF",
+      "createdBy": "supplier one",
+      "createdDate": "2021-08-03 00:00:00"
+    }
+  ]
+}

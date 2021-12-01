@@ -1,0 +1,30 @@
+<div class="sc-dvXXZy iHywWM">
+  <select
+    #thisSelect
+    (change)="onOptionsSelected(thisSelect.value)"
+    class="sc-bTDODP ORxES"
+  >
+    <option *ngFor="let option of options" [value]="option">
+      {{ option }}
+    </option>
+  </select>
+  <div class="sc-TtZHJ jtkOTD">&nbsp;</div>
+  <div class="sc-jOFreG kSYtUo">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      role="presentation"
+      class="sc-hmbsMR bSwkYY"
+    >
+      <path
+        fill="rgba(0, 0, 0, 0.9)"
+        d="M8.061 12l8.469 8.47-1.06 1.06L5.939 12l9.531-9.53 1.06 1.06z"
+      ></path>
+    </svg>
+  </div>
+  <label class="sc-jHNhIU hQXbqg">{{ label }}</label
+  ><span class="sc-amjdv NZhKi" [class.selectedOption]="selectedOption">{{
+    selectedOption
+  }}</span>
+</div>

@@ -1,0 +1,10 @@
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+- group: DHLBitbucketRepo
+
+steps:
+- task: gitsync@1
+  inputs:
+    GitRepoUrl: 'https://$(username):$(password)@bitbucket.org/SecureCargo/transinv_app.git'

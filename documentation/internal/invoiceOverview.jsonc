@@ -1,0 +1,36 @@
+{
+  "status": "proforma",
+  "locked": "true",
+  "lockedBy": "JohnDoe@dhl.com",
+  "invoiceNumber": "asdf12345",
+
+  "shipment": {
+    "waybillCreation": {
+      // Invoice date? if not replace with date of invoice creation
+      "dateTime": "2021-08-02 13:00:35",
+      "dateTimeOffset": "-06"
+    },
+    "etd": {
+      // Shipment date? -- Only require date (no time)
+      "dateTime": "2021-08-03 00:00:00",
+      "dateTimeOffset": "-06"
+    },
+    "originStation": {
+      "code": "PTY"
+    },
+    "destinationStation": {
+      "code": "GUA"
+    },
+    "valueOfGoods": "100.00",
+    "goodsValuta": "USD"
+  },
+  "shipperAddress": {
+    "name": "ASTRAZENECA CAMCAR S.A."
+  },
+  "billToPartyAddress": {
+    "name": "ASTRAZENECA CAMCAR S.A."
+  },
+  "consigneeAddress": {
+    "name": "ASTRAZENECA CAMCAR S.A."
+  }
+}

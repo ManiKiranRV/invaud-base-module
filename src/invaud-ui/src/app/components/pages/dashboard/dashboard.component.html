@@ -1,0 +1,19 @@
+<p>dashboard works!</p>
+<p>Currently using this page to demo styling</p>
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-secondary">Secondary</button>
+<div *ngFor="let item of invoiceStage | keyvalue: noSort">
+  {{ item.key }}
+</div>
+<div class="select-wrap">
+  <label class="dhl-label">Show</label>
+  <select class="invoice-select dhl-input" id="selectedInvoiceStage">
+    <option
+      *ngFor="let status of invoiceStage | enumToHtmlArray: 'All'"
+      value="{{ status }}"
+      class=""
+    >
+      {{ status }}
+    </option>
+  </select>
+</div>

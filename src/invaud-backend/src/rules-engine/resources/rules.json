@@ -1,0 +1,47 @@
+{
+  "id": "1234567890",
+  "laneId": "L101",
+  "laneName": "Trade Lane1 between CHINA and JAPAN",
+  "mode": "AIR",
+  "incoTerms": "DAT",
+  "originCountry": "CHINA",
+  "destinationCountry": "JAPAN",
+  "invoiceCurrency": "USD",
+  "chargeLines": [
+    {
+      "chargeCode": "OTHF",
+      "additionalCharge": false,
+      "chargeDescription": "Origin terminal handling-Forwarder",
+      "chargeAmount": 150.0,
+      "chargeCurrency": "USD"
+    },
+    {
+      "chargeCode": "OCLE",
+      "additionalCharge": false,
+      "chargeDescription": "Export Customs Clearence",
+      "chargeAmount": 165.0,
+      "chargeCurrency": "USD"
+    },
+    {
+      "chargeCode": "OADM",
+      "additionalCharge": false,
+      "chargeDescription": "Org. Administartive Handling",
+      "chargeAmount": 130.0,
+      "chargeCurrency": "USD"
+    },
+    {
+      "chargeCode": "OPUP",
+      "additionalCharge": false,
+      "chargeDescription": "Pickup via truck",
+      "chargeAmount": 150.0,
+      "chargeCurrency": "USD"
+    },
+    {
+      "chargeCode": "FRT",
+      "additionalCharge": false,
+      "chargeDescription": "Fuel Charge",
+      "chargeAmount": 650.0,
+      "chargeCurrency": "USD"
+    }
+  ]
+}

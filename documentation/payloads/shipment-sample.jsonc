@@ -1,0 +1,779 @@
+{
+  "interchangeHeader": {
+    "sourceSystem": "CW1",
+    "targetSystem": "BLESS",
+    "noOfMessages": "1"
+  },
+  "message": {
+    "messageHeader": {
+      "messageTrigger": "POD",
+      "dateTime": "2021-09-02 12:45:49",
+      "dateTimeOffset": "-06",
+      "sessionId": "6ec380f7-3c55-4e54-bce6-f347df525cce",
+      "bodId": "c34f7db9-4eb9-4b3a-83fe-fcfdf486451a",
+      "dataSource": "ForwardingConsol"
+    },
+    "shipment": {
+      "trackingNo": "9D04215",
+      "shipReferenceId": "S2103456882",
+      "modeOfTransport": "AIR",
+      "waybillCreation": {
+        "dateTime": "2021-08-02 13:00:35",
+        "dateTimeOffset": "-06"
+      },
+      "etd": {
+        "dateTime": "2021-08-03 00:00:00",
+        "dateTimeOffset": "-06"
+      },
+      "eta": {
+        "dateTime": "2021-08-06 00:00:00",
+        "dateTimeOffset": "-06"
+      },
+      "originStation": {
+        "code": "PTY",
+        "name": "Panama, Ciudad de",
+        "country": "PA"
+      },
+      "destinationStation": {
+        "code": "GUA",
+        "name": "Guatemala City",
+        "country": "GT"
+      },
+      "numberOfPieces": "9",
+      "weight": "1120.600",
+      "weightUom": "KGM",
+      "chargeableWeight": "2120.000",
+      "chargeableWeightUom": "KGM",
+      "volume": "12.718",
+      "volumeUom": "MTQ",
+      "freightTerms": "Prepaid",
+      "otherChargesTerms": "Mixed",
+      "shipmentIncoTerms": "CIP",
+      "commodityCode": "TP2",
+      "commodityText": "TEMPERATURE CONTROLLED PASSIVE +2 T",
+      "shipmentServiceCode": "DD3",
+      "shipmentTypeCode": "10",
+      "podSignee": "Cesar Braul",
+      "dangerousGoods": "NO"
+    },
+    "masters": {
+      "master": {
+        "trackingNo": "992-14109266",
+        "mstReferenceId": "C2101760722",
+        "waybillCreation": {
+          "dateTime": "2021-08-13 08:40:36",
+          "dateTimeOffset": "-06"
+        },
+        "carrier": {
+          "code": "D5",
+          "iatacode2l": "D5",
+          "name": "DHL AERO EXPRESO S.A.",
+          "country": "PA"
+        },
+        "transportNumber": "L3216",
+        "origin": {
+          "code": "PTY",
+          "name": "Panama, Ciudad de",
+          "country": "PA"
+        },
+        "destination": {
+          "code": "GUA",
+          "name": "Guatemala City",
+          "country": "GT"
+        },
+        "modeOfTransport": "AIR",
+        "events": [
+          {
+            "eventCode": "ADD",
+            "description": "Consol Created",
+            "dateTime": "2021-08-13 08:40:36",
+            "dateTimeOffset": "-06"
+          },
+          {
+            "eventCode": "BKC",
+            "eventCodeLegacy": "BKD",
+            "description": "Carrier Booking Confirmed",
+            "dateTime": "2021-08-13 16:17:23",
+            "dateTimeOffset": "-05",
+            "locationCode": "PAPTY"
+          },
+          {
+            "eventCode": "Z41",
+            "eventCodeLegacy": "CLS",
+            "description": "Final Master Printed",
+            "dateTime": "2021-08-13 22:43:07",
+            "dateTimeOffset": "-05",
+            "locationCode": "PAPTY"
+          },
+          {
+            "eventCode": "GOU",
+            "eventCodeLegacy": "DEW",
+            "description": "Depart from Warehouse",
+            "dateTime": "2021-08-14 10:27:23",
+            "dateTimeOffset": "-06"
+          },
+          {
+            "eventCode": "HNV",
+            "eventCodeLegacy": "RCS",
+            "description": "Freight Physically Checked in at Departure Airline",
+            "dateTime": "2021-08-14 11:22:00",
+            "dateTimeOffset": "-05",
+            "locationCode": "PAPTY"
+          },
+          {
+            "eventCode": "DEP",
+            "description": "Departed",
+            "dateTime": "2021-08-15 02:34:00",
+            "dateTimeOffset": "-06"
+          },
+          {
+            "eventCode": "DEP",
+            "description": "Departed",
+            "dateTime": "2021-08-15 02:45:00",
+            "dateTimeOffset": "-06"
+          },
+          {
+            "eventCode": "FLO",
+            "eventCodeLegacy": "DEP",
+            "description": "Confirmed on Board Departure",
+            "dateTime": "2021-08-15 02:34:00",
+            "dateTimeOffset": "-05",
+            "locationCode": "PAPTY"
+          },
+          {
+            "eventCode": "Z50",
+            "eventCodeLegacy": "DOC",
+            "description": "Document Recovery",
+            "dateTime": "2021-08-16 11:37:00",
+            "dateTimeOffset": "-06",
+            "locationCode": "GTGUA"
+          },
+          {
+            "eventCode": "ARV",
+            "description": "Arrived",
+            "dateTime": "2021-08-16 04:19:00",
+            "dateTimeOffset": "-06"
+          },
+          {
+            "eventCode": "ARV",
+            "description": "Arrived",
+            "dateTime": "2021-08-16 04:19:00",
+            "dateTimeOffset": "-06"
+          },
+          {
+            "eventCode": "FUL",
+            "eventCodeLegacy": "ARR",
+            "description": "Consolidation Arrival",
+            "dateTime": "2021-08-16 04:19:00",
+            "dateTimeOffset": "-06",
+            "locationCode": "GTGUA"
+          },
+          {
+            "eventCode": "ARV",
+            "description": "Arrival at 1st Transit Airport",
+            "dateTime": "2021-08-15 03:36:00",
+            "dateTimeOffset": "-06"
+          },
+          {
+            "eventCode": "ARV",
+            "description": "Arrival at 1st Transit Airport",
+            "dateTime": "2021-08-15 03:02:00",
+            "dateTimeOffset": "-06"
+          },
+          {
+            "eventCode": "FUL",
+            "eventCodeLegacy": "EAA",
+            "description": "Consolidation Arrival at 1st Transit",
+            "dateTime": "2021-08-15 03:36:00",
+            "dateTimeOffset": "-06",
+            "locationCode": "CRSJO"
+          },
+          {
+            "eventCode": "DEP",
+            "description": "Departure from 1st Transit Airport",
+            "dateTime": "2021-08-16 02:49:00",
+            "dateTimeOffset": "-06"
+          },
+          {
+            "eventCode": "DEP",
+            "description": "Departure from 1st Transit Airport",
+            "dateTime": "2021-08-16 02:45:00",
+            "dateTimeOffset": "-06"
+          },
+          {
+            "eventCode": "FLO",
+            "eventCodeLegacy": "EAB",
+            "description": "Confirmed on Board from 1st Transit",
+            "dateTime": "2021-08-16 02:48:00",
+            "dateTimeOffset": "-06",
+            "locationCode": "CRSJO"
+          },
+          {
+            "eventCode": "BillIssued+false",
+            "dateTime": "2021-08-13 00:00:00",
+            "dateTimeOffset": "-06"
+          }
+        ],
+        "masterLeg": [
+          {
+            "sequenceNo": "1",
+            "carrier": {
+              "code": "D5",
+              "name": "DHL AERO EXPRESO S.A.",
+              "country": "PA"
+            },
+            "transportNumber": "D50230",
+            "origin": {
+              "code": "PTY",
+              "name": "Panama, Ciudad de",
+              "country": "PA"
+            },
+            "destination": {
+              "code": "SJO",
+              "name": "San Jose",
+              "country": "CR"
+            },
+            "atd": {
+              "dateTime": "2021-08-15 02:34:00",
+              "dateTimeOffset": "-05"
+            },
+            "ata": {
+              "dateTime": "2021-08-15 03:36:00",
+              "dateTimeOffset": "-06"
+            },
+            "modeOfTransport": "AIR"
+          },
+          {
+            "sequenceNo": "2",
+            "carrier": {
+              "code": "L3",
+              "name": "DHL AERO EXPRESO S.A.",
+              "country": "PA"
+            },
+            "transportNumber": "L3216",
+            "origin": {
+              "code": "SJO",
+              "name": "San Jose",
+              "country": "CR"
+            },
+            "destination": {
+              "code": "GUA",
+              "name": "Guatemala City",
+              "country": "GT"
+            },
+            "atd": {
+              "dateTime": "2021-08-16 02:49:00",
+              "dateTimeOffset": "-06"
+            },
+            "ata": {
+              "dateTime": "2021-08-16 04:19:00",
+              "dateTimeOffset": "-06"
+            },
+            "modeOfTransport": "AIR"
+          }
+        ]
+      }
+    },
+    "addresses": [
+      {
+        "idSource": "CW1",
+        "id": "PAASC001",
+        "legacyIdOrigin": "PAA2610",
+        "party": "ConsignorDocumentaryAddress",
+        "name": "ASTRAZENECA CAMCAR S.A.",
+        "line": [
+          "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+          "MIT LOGISTIC PARK, COLON FREE ZONE"
+        ],
+        "city": "COLON",
+        "state": "3",
+        "zip": "0302-00503",
+        "country": "PA",
+        "countryName": "Panama",
+        "companyName": "ASTRAZENECA CAMCAR S.A."
+      },
+      {
+        "idSource": "CW1",
+        "id": "PAASC001",
+        "legacyIdOrigin": "PAA2610",
+        "party": "ConsignorPickupDeliveryAddress",
+        "name": "ASTRAZENECA CAMCAR S.A.",
+        "line": [
+          "COLON IMPORT AND EXPOR AV RANDOLPH COCO SOLO NORTH",
+          "MIT LOGISTIC PARK, COLON FREE ZONE"
+        ],
+        "city": "COLON",
+        "state": "3",
+        "zip": "0302-00503",
+        "country": "PA",
+        "countryName": "Panama",
+        "companyName": "ASTRAZENECA CAMCAR S.A."
+      },
+      {
+        "idSource": "CW1",
+        "id": "GTAGJ001",
+        "legacyIdDestination": "GT7000AGUA",
+        "party": "ConsigneeDocumentaryAddress",
+        "name": "AGENCIAS J. I. COHEN SOCIEDAD ANONIMA",
+        "line": [
+          "CALZADA ROOSEVELT 6-19 ZONA 3",
+          "COLONIA COTIO MIXCO GUATEMALA NIT 7365686-0"
+        ],
+        "city": "GUATEMALA",
+        "state": "GU",
+        "country": "GT",
+        "countryName": "Guatemala",
+        "companyName": "AGENCIAS J. I. COHEN SOCIEDAD ANONIMA"
+      },
+      {
+        "idSource": "CW1",
+        "id": "GTAGJ001",
+        "legacyIdDestination": "GT7000AGUA",
+        "party": "ConsigneePickupDeliveryAddress",
+        "name": "AGENCIAS J. I. COHEN SOCIEDAD ANONIMA",
+        "line": [
+          "CALZADA ROOSEVELT 6-19 ZONA 3",
+          "COLONIA COTIO MIXCO GUATEMALA NIT 7365686-0"
+        ],
+        "city": "GUATEMALA",
+        "state": "GU",
+        "country": "GT",
+        "countryName": "Guatemala",
+        "companyName": "AGENCIAS J. I. COHEN SOCIEDAD ANONIMA"
+      },
+      {
+        "idSource": "CW1",
+        "id": "ONX",
+        "party": "PickupAgent",
+        "name": "DHL GLOBAL FORWARDING PANAMA S.A.",
+        "line": [
+          "FRANCE FIELD, CALLE 1ERA, AVENIDA",
+          "1ERA SEGUNDA ENTRADA DE FF, ZL"
+        ],
+        "city": "COLON",
+        "zip": "0818-05964",
+        "country": "PA",
+        "countryName": "Panama",
+        "companyName": "DHL GLOBAL FORWARDING PANAMA S.A."
+      },
+      {
+        "idSource": "CW1",
+        "id": "PACOI018",
+        "legacyIdOrigin": "PAC0092",
+        "party": "SendersLocalClient",
+        "name": "COLON IMPORT & EXPORT ZLC, S.A.",
+        "line": ["AV. RANDOLPH, COCO SOLO NORTH", "MIT LOGISTIC PARK"],
+        "city": "COLON",
+        "state": "3",
+        "zip": "0302-00503",
+        "country": "PA",
+        "countryName": "Panama",
+        "companyName": "COLON IMPORT & EXPORT ZLC, S.A."
+      },
+      {
+        "idSource": "CW1",
+        "id": "GUA",
+        "party": "SendersOverseasAgent",
+        "name": "DHL GLOBAL FORWARDING GUATEMALA SOCIEDAD ANONIMA",
+        "line": ["46 CALLE 24-30 ZONA 12", "NIT 12775711"],
+        "city": "GUATEMALA",
+        "state": "GU",
+        "zip": "01012",
+        "country": "GT",
+        "countryName": "Guatemala",
+        "companyName": "DHL GLOBAL FORWARDING GUATEMALA SOCIEDAD ANONIMA"
+      },
+      {
+        "idSource": "CW1",
+        "id": "SCCDZAGT",
+        "party": "ImportBroker",
+        "name": "SERVICE CENTER CDZ AIR - GT",
+        "line": "INTERNAL BILLING ACCOUNT",
+        "city": "GUATEMALA",
+        "country": "GT",
+        "countryName": "Guatemala",
+        "companyName": "SERVICE CENTER CDZ AIR - GT"
+      },
+      {
+        "idSource": "CW1",
+        "id": "GUA",
+        "party": "DeliveryAgent",
+        "name": "DHL GLOBAL FORWARDING GUATEMALA SOCIEDAD ANONIMA",
+        "line": ["46 CALLE 24-30 ZONA 12", "NIT 12775711"],
+        "city": "GUATEMALA",
+        "state": "GU",
+        "zip": "01012",
+        "country": "GT",
+        "countryName": "Guatemala",
+        "companyName": "DHL GLOBAL FORWARDING GUATEMALA SOCIEDAD ANONIMA"
+      },
+      {
+        "idSource": "CW1",
+        "id": "SCCTGAPA",
+        "party": "PickupLocalCartage",
+        "name": "SERVICE CENTER CARTAGE AIR - PA",
+        "line": "INTERNAL BILLING ACCOUNT",
+        "city": "PANAMA",
+        "zip": "0818-05964",
+        "country": "PA",
+        "countryName": "Panama",
+        "companyName": "SERVICE CENTER CARTAGE AIR - PA"
+      }
+    ],
+    "events": [
+      {
+        "eventCode": "DCF",
+        "eventCodeLegacy": "POD",
+        "description": "Proof of Delivery",
+        "dateTime": "2021-09-02 12:45:49",
+        "dateTimeOffset": "-06",
+        "locationCode": "GTGUA"
+      },
+      {
+        "eventCode": "ADD",
+        "eventCodeLegacy": "HBE",
+        "description": "Shipment Created",
+        "dateTime": "2021-08-02 13:00:35",
+        "dateTimeOffset": "-05",
+        "locationCode": "PAPTY"
+      },
+      {
+        "eventCode": "Z93",
+        "eventCodeLegacy": "HBC",
+        "description": "Customer Order Received",
+        "dateTime": "2021-08-02 13:00:35",
+        "dateTimeOffset": "-05",
+        "locationCode": "PAPTY"
+      },
+      {
+        "eventCode": "MAA",
+        "eventCodeLegacy": "ACC",
+        "description": "Customer Order Accepted",
+        "dateTime": "2021-08-02 13:00:46",
+        "dateTimeOffset": "-05",
+        "locationCode": "PAPTY"
+      },
+      {
+        "eventCode": "PCA",
+        "description": "Pickup Cartage Advised",
+        "dateTime": "2021-08-19 16:15:16",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "PCF",
+        "eventCodeLegacy": "APT",
+        "description": "Pick Up",
+        "dateTime": "2021-08-13 13:27:21",
+        "dateTimeOffset": "+02",
+        "locationCode": "PACSO"
+      },
+      {
+        "eventCode": "IRP",
+        "eventCodeLegacy": "RCD",
+        "description": "Shipment Received at Origin warehouse",
+        "dateTime": "2021-08-13 19:03:20",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "DSN",
+        "eventCodeLegacy": "DOS",
+        "description": "Document/Pre-Alert Sent To",
+        "dateTime": "2021-08-17 12:12:00",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "DDV",
+        "description": "Export Customs Instruction Sent to Broker",
+        "dateTime": "2021-08-06 11:23:57",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "FUL",
+        "eventCodeLegacy": "ARV",
+        "description": "Arrived at Destination Airport",
+        "dateTime": "2021-08-16 04:19:00",
+        "dateTimeOffset": "-06",
+        "locationCode": "GTGUA"
+      },
+      {
+        "eventCode": "Z18",
+        "eventCodeLegacy": "TBN",
+        "description": "Broker/Customer Notified",
+        "dateTime": "2021-08-16 14:38:11",
+        "dateTimeOffset": "-06",
+        "locationCode": "GTGUA"
+      },
+      {
+        "eventCode": "DDV",
+        "description": "Import Customs Instruction Sent to Broker",
+        "dateTime": "2021-08-04 20:22:36",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "CLR",
+        "eventCodeLegacy": "CLC",
+        "description": "Import Customs Cleared",
+        "dateTime": "2021-09-01 09:51:00",
+        "dateTimeOffset": "-06",
+        "locationCode": "GTGUA"
+      },
+      {
+        "eventCode": "DCA",
+        "eventCodeLegacy": "REL",
+        "description": "Delivery Cartage Advised",
+        "dateTime": "2021-09-01 20:10:24",
+        "dateTimeOffset": "-06",
+        "locationCode": "GTGUA"
+      },
+      {
+        "eventCode": "SIV",
+        "eventCodeLegacy": "A74",
+        "description": "Import Invoice Printed",
+        "dateTime": "2021-08-16 17:03:56",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "Z97",
+        "description": "CoEx Auto-Import",
+        "dateTime": "2021-08-02 13:00:39",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "SIV",
+        "description": "Export Invoice Printed",
+        "dateTime": "2021-08-16 15:06:05",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "DOH",
+        "eventCodeLegacy": "DOH",
+        "description": "Document Handover",
+        "dateTime": "2021-08-17 12:12:00",
+        "dateTimeOffset": "-06",
+        "locationCode": "GTGUA"
+      },
+      {
+        "eventCode": "Z15",
+        "description": "Sent to Import Customs System",
+        "dateTime": "2021-08-04 20:19:50",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "OLO+ServiceBookedDate+",
+        "dateTime": "2021-08-02 00:00:00",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "OLO+ServiceDateCompleted+",
+        "dateTime": "2021-08-02 00:00:00",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "Received+false",
+        "dateTime": "2021-08-13 19:03:00",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "Departure+true",
+        "eventCodeLegacy": "ETD",
+        "dateTime": "2021-08-03 00:00:00",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "Arrival+true",
+        "eventCodeLegacy": "ETA",
+        "dateTime": "2021-08-06 00:00:00",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "ShippedOnBoard+false",
+        "dateTime": "2021-08-15 02:34:00",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "BillIssued+false",
+        "dateTime": "2021-08-02 13:00:00",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "CPE",
+        "eventCodeLegacy": "CPE",
+        "description": "CustomerPromiseEnd",
+        "dateTime": "2021-08-06 00:00:00",
+        "dateTimeOffset": "-06"
+      },
+      {
+        "eventCode": "CPS",
+        "eventCodeLegacy": "CPS",
+        "description": "CustomerPromiseStart",
+        "dateTime": "2021-08-29 00:00:00",
+        "dateTimeOffset": "-06"
+      }
+    ],
+    "references": [
+      {
+        "qualifier": "BTD",
+        "value": "DHLI-9D04215"
+      },
+      {
+        "qualifier": "CRN",
+        "value": "251-1742234"
+      },
+      {
+        "qualifier": "GSB",
+        "value": "Cesar Braul"
+      },
+      {
+        "qualifier": "SRC",
+        "value": "DHLI"
+      },
+      {
+        "qualifier": "SRN",
+        "value": "MAZ-1898"
+      },
+      {
+        "qualifier": "CRF",
+        "value": "R0992"
+      }
+    ],
+    "remarks": [
+      {
+        "remarkType": "Customer Order Notes",
+        "text": "The following information from the EDI booking file was not processed by CW1. Please use below overview for consol creation and further data enrichment:\n\n--- General Information ---\nConsol Type:\nContainer Mode:\nPayment Method: PPD\nPort of Loading:\nPort of Discharge:\nVessel Name:\nVoyage / Flight Number:\n\n--- Delivery Address ---\nParty Name: AGENCIAS J I COHEN S. A.\nAddress Line 1: CALZADA ROOSEVELT 6-19 ZONA 3\nAddress Line 2: Guatemala\nPostal Code: .\nCity: GUATEMALA\nCountry: GT\nContact: Eugenia Cotton\nPhone: .\n--- Pickup Address ---\nParty Name: ASTRAZENECA CAMCAR S.A.\nAddress Line 1: C/O COLON IMPORT AND EXPORT\nAddress Line 2: Panama\nPostal Code: COCO SOLO\nCity: COLON FREE ZONE\nCountry: PA\nContact:\nPhone: +5074301733\n--- Loading Information ---\n31 PKG / 417.9 KG\nLoading Meters: 0\nContains Li ion/metal batt: false\nContains Dangerous goods:  false+--- Additional Information ---\nPickup Date: 2021-08-03"
+      },
+      {
+        "remarkType": "FSI3 DIMS PTY01 13AUG/19:03 - 77045504",
+        "text": "Pieces  Package type  Length   Width   Height   Weight\n-------------------------------------------------------------------\n 2  PP  120  102  109  249\n 6  PP  120  102  121  748.000002\n 1  PP  120  102  144  125\n-------------------------------------------------------------------\nTotal pieces: 9\nTotal damaged pieces: 0\nTotal weight: 1122.000002\nWarehouse: PAPTY\nUnits: CMT/KGM"
+      },
+      {
+        "remarkType": "Goods Handling Instructions",
+        "text": "MANT TEMP. 2\u00b0 A 8\u00b0 EN TODO MOMENTO."
+      },
+      {
+        "remarkType": "Goods Description",
+        "text": "MEDICAMENTOS - DDP"
+      }
+    ],
+    "packages": [
+      {
+        "packageCount": "2",
+        "type": "PP",
+        "grossWeight": "1120.600",
+        "grossWeightUom": "KGM",
+        "commodity": "TP2",
+        "length": "47.000",
+        "lengthUom": "INH",
+        "width": "40.000",
+        "widthUom": "INH",
+        "height": "48.000",
+        "heightUom": "INH",
+        "temperatureRange": {
+          "requiredTemperatureMinimum": "2.0",
+          "requiredTemperatureMaximum": "8.0"
+        }
+      },
+      {
+        "packageCount": "1",
+        "type": "PP",
+        "grossWeight": "0.000",
+        "grossWeightUom": "KGM",
+        "commodity": "TP2",
+        "length": "47.000",
+        "lengthUom": "INH",
+        "width": "40.000",
+        "widthUom": "INH",
+        "height": "57.000",
+        "heightUom": "INH",
+        "temperatureRange": {
+          "requiredTemperatureMinimum": "2.0",
+          "requiredTemperatureMaximum": "8.0"
+        }
+      },
+      {
+        "packageCount": "2",
+        "type": "PP",
+        "grossWeight": "0.000",
+        "grossWeightUom": "KGM",
+        "commodity": "TP2",
+        "length": "47.000",
+        "lengthUom": "INH",
+        "width": "40.000",
+        "widthUom": "INH",
+        "height": "44.000",
+        "heightUom": "INH",
+        "temperatureRange": {
+          "requiredTemperatureMinimum": "2.0",
+          "requiredTemperatureMaximum": "8.0"
+        }
+      },
+      {
+        "packageCount": "1",
+        "type": "PP",
+        "grossWeight": "0.000",
+        "grossWeightUom": "KGM",
+        "commodity": "TP2",
+        "length": "47.000",
+        "lengthUom": "INH",
+        "width": "40.000",
+        "widthUom": "INH",
+        "height": "43.000",
+        "heightUom": "INH",
+        "temperatureRange": {
+          "requiredTemperatureMinimum": "2.0",
+          "requiredTemperatureMaximum": "8.0"
+        }
+      },
+      {
+        "packageCount": "1",
+        "type": "PP",
+        "grossWeight": "0.000",
+        "grossWeightUom": "KGM",
+        "commodity": "TP2",
+        "length": "47.000",
+        "lengthUom": "INH",
+        "width": "32.000",
+        "widthUom": "INH",
+        "height": "51.000",
+        "heightUom": "INH",
+        "temperatureRange": {
+          "requiredTemperatureMinimum": "2.0",
+          "requiredTemperatureMaximum": "8.0"
+        }
+      },
+      {
+        "packageCount": "1",
+        "type": "PP",
+        "grossWeight": "0.000",
+        "grossWeightUom": "KGM",
+        "commodity": "TP2",
+        "length": "47.000",
+        "lengthUom": "INH",
+        "width": "40.000",
+        "widthUom": "INH",
+        "height": "46.000",
+        "heightUom": "INH",
+        "temperatureRange": {
+          "requiredTemperatureMinimum": "2.0",
+          "requiredTemperatureMaximum": "8.0"
+        }
+      },
+      {
+        "packageCount": "1",
+        "type": "PP",
+        "grossWeight": "0.000",
+        "grossWeightUom": "KGM",
+        "commodity": "TP2",
+        "length": "47.000",
+        "lengthUom": "INH",
+        "width": "40.000",
+        "widthUom": "INH",
+        "height": "42.000",
+        "heightUom": "INH",
+        "temperatureRange": {
+          "requiredTemperatureMinimum": "2.0",
+          "requiredTemperatureMaximum": "8.0"
+        }
+      }
+    ]
+  }
+}

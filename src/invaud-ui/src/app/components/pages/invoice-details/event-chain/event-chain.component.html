@@ -1,0 +1,12 @@
+<div class="info-box min-width-300">
+  <h3 class="emphasis mt-0">Event Chain</h3>
+  <ul class="dhl-vertical-list">
+    <li *ngFor="let event of chainEvents; let last=last" [ngClass]="{ active: last }">
+      {{ event.type }}
+    </li>
+    <!-- <li [ngClass]="{ completed: true }">Finished Step</li>
+    <li class="active">Currently Active Step</li>
+    <li>Upcoming Step</li>
+    <li>Upcoming Step</li> -->
+  </ul>
+</div>
